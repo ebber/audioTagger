@@ -2,7 +2,7 @@ import spotipy
 import pprint
 
 #add auth
-class metaRetriever:
+class spotifyMetaRetriever:
   def __init__(self):
     self.sp = spotipy.Spotify()
 
