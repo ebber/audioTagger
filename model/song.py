@@ -10,7 +10,7 @@ class Song:
         self.dir = dir
 
     def fillMetadta(self, basicMeta):
-        print basicMeta
+        #print basicMeta
         self.setTitle(basicMeta["TITLE"][0])
         self.setArtist(basicMeta["ARTIST"][0])
         self.setAlbum(basicMeta["ALBUM"][0])
@@ -24,7 +24,7 @@ class Song:
         return 1;
 
     def getTitle(self):
-        return self.song.tags["TITLE"]
+        return self.song.tags.get("TITLE")
 
     def setArtist(self, newArtist):
         try:
@@ -55,8 +55,7 @@ class Song:
         if None is destDir:
             return retVal
 
-
-        print(os.listdir("."))
+        #at top level dict
         title = self.getTitle()[0] if self.getTitle() != None else self.filename
         move_file(self.dir + self.filename, destDir + title +".mp3")
 
